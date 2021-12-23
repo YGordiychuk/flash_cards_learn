@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title%}
+LVC - Add card
+{% endblock %}
+
+{% block content%}
+    <h4>Add card: </h4>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.description }}<br>
+        <button type="submit" class="btn btn-success">Add this one</button>
+        <span>{{ info }}</span>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+
+{% block title%}
+{{ title }}
+{% endblock %}
+
+{% block content%}
+    <h1>Main page</h1>
+    {% if tasks %}
+
+        <div class="alert alert-warning mt-2" >
+            <h3>{{ tasks.title }}</h3>
+            <p id="demo"></p>
+        </div>
+
+        <form action="">
+        <button id="bad" type="button" onclick="myFunction()" class="btn btn-danger">Show answer</button>
+            <button type="submit" class="btn btn-primary">Next card</button>
+        </form>
+
+        <script type="text/javascript">
+            function myFunction() {
+                document.getElementById("demo").innerHTML = "{{ tasks.description }}";
+                document.getElementById("bad").style.background = "royalblue"
+                document.getElementById("bad").style.border = "1px solid royalblue"
+            }
+        </script>
+    {% else %}
+        <p>Вы всё еще не добавили записи</p>
+    {% endif %}
+{% endblock %}
+
+
